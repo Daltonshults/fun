@@ -16,6 +16,11 @@ class TestChange(unittest.TestCase):
         ch = Change(100.00, 275.75)
         self.assertEqual([(100, 1.00), (50, 1.00), (20, 1.00), (5, 1.00), (0.25, 3.00)], ch.change)
         
-    def test_4(self):
+    def test_negative_change(self):
         ch = Change(175.00, 100.00)
         self.assertEqual([], ch.change)
+
+    def test_equal_change(self):
+        ch = Change(10.00, 10.00)
+        self.assertEqual([], ch.change)
+    
