@@ -10,7 +10,7 @@ class Change:
 
     def calculate(self):
         
-        # Calculate total change and initialize list for pair values
+        # Initialize list for pair values (value, quantity)
         quantity_by_denomination = []
 
         # Check to see if change is due: handles negative and equal change values
@@ -27,7 +27,7 @@ class Change:
 
                 # If our quantity is greater than 0 add it to the quantity list by denomination
                 if quantity > 0:
-                    quantity_by_denomination.append((self.denominations[i], quantity))
+                    quantity_by_denomination.append((self.denominations[i], int(quantity)))
 
                 # if our current change total is 0 we no longer need to iterate
                 if self.change_total == 0:
