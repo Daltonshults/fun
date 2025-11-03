@@ -12,8 +12,10 @@ class Change:
         # Calculate total change and initialize list for pair values
         change_total = self.provided - self.total
         quantity_by_denomination = []
-        
+
+        # Check to see if change is due: handles negative and equal change values
         if change_total > 0:
+
             # Iterate over the denominations and append pair values to list
             for i in range(len(self.denominations)):
 
